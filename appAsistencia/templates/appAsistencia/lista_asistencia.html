@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de asistencias</title>
+</head>
+<body>
+	{% for usuario in lista_usuarios %}
+	<div>
+		<h1>Usuario</h1>
+		<p>Nombre: {{usuario.nombre}}</p>
+		<p>Area: {{usuario.area}}</p>
+		<p>Cargo: {{usuario.cargo}}</p>
+		<br>
+	</div>
+	{% endfor %}
+</body>
+</html>
