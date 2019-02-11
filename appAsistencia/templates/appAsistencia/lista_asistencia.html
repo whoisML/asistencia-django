@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sistema de asistencias</title>
-</head>
-<body>
+{% extends 'appAsistencia/base.html' %}
+{% block contenido %}
 	{% for usuario in lista_usuarios %}
-	<div>
-		<h1>Usuario</h1>
-		<p>Nombre: {{usuario.nombre}}</p>
-		<p>Area: {{usuario.area}}</p>
-		<p>Cargo: {{usuario.cargo}}</p>
-		<br>
+	
+	<div class="card">
+		<h1 class="card-title">{{usuario.nombre}}</h1>
+		<div class="card-body">
+			<p class="card-text">
+				Area: {{usuario.area}} <br>
+				Cargo: {{usuario.cargo}}
+			</p>
+			<a href="{% url 'detalles_usuario' pk=usuario.pk%}" class="btn btn-primary">Información de {{usuario.nombre}}</a>
+		</div>
 	</div>
+
+
+    <!-- Para cuando alguien vaya a comer se pondra roja la tarjeta -->
+    <!--
+	<div class="card border-danger mb-3" style="max-width: 18rem;">
+		<div class="card-header bg-transparent border-danger">Header</div>
+		<div class="card-body text-danger">
+			<h5 class="card-title">Danger card title</h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		</div>
+		<div class="card-footer bg-transparent border-danger">Footer</div>
+	</div>
+    -->
+
 	{% endfor %}
-</body>
-</html>
+{% endblock %}

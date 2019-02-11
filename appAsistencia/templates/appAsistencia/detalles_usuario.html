@@ -1,0 +1,15 @@
+{% extends 'appAsistencia/base.html' %}
+{% block contenido %}
+	{% if usuario.nombre %}
+		<div class="card">
+			<h1 class="card-title">{{usuario.nombre}}</h1>
+			<div class="card-body">
+				<p class="card-text">
+					Area: {{usuario.area}} <br>
+					Cargo: {{usuario.cargo}}
+				</p>
+				<a href="{% url 'detalles_usuario' pk=usuario.pk%}" class="btn btn-primary">Información de {{usuario.nombre}}</a>
+			</div>
+		</div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de asistencias</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/appAsistencia.css' %}">
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="cabecera-pagina">
+        <h1><a href="/">Lista de asistencia</a></h1>
+    </div>
+    <br>
+    <div class="content">
+    	<div class="card-columns">
+	        {% block contenido %}
+	        {% endblock %}
+    	</div>
+    </div>
+</body>
+</html>
